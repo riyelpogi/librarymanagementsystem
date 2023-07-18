@@ -1,14 +1,14 @@
 <div class="w-10/12 relative m-10 ">
     @foreach ($requests as $request)
-        <div class="m-10 w-full rounded-lg bg-white flex relative justify-between items-center">
-            <div class="relative flex">
-                <img src="{{ $request->user->profile_photo_url }}" alt="{{$request->user->name}}" class="h-16 rounded-full">
+        <div class="mt-5 sm:m-10 w-full rounded-lg bg-white flex relative justify-between items-center">
+            <div class="relative flex ">
+                <img src="{{ $request->user->profile_photo_url }}" alt="{{$request->user->name}}" class="h-16 rounded-full hidden sm:block">
                 <div class="">
-                <h1 class="mt-5 ml-5">{{$request->user->name}}</h1>
+                <h1 class="mt-2 sm:mt-5 ml-5 text-xs sm:text-1xl">{{$request->user->name}}</h1>
                 <p class="ml-5 text-xs">Book ID: {{$request->book_id}}</p>
                 </div>
             </div>
-            <x-button class="mr-2" wire:click="showRequest({{$request->id}})" wire:key="request-{{$request->id}}">view request</x-button>
+            <x-button class="mr-2 text-xs" wire:click="showRequest({{$request->id}})" wire:key="request-{{$request->id}}">view request</x-button>
         </div>
     @endforeach 
     
@@ -22,7 +22,7 @@
             <div class="flex flex-col">
 
                 <div class="flex">
-                    <img src="/storage/book.png" class="h-16 w-16" alt="">
+                    <img src="/storage/book.png" class="h-16 w-16  hidden sm:block " alt="">
                     <div class="">
                         <h1 class="mt-4 ml-3" >{{$requestBookName}}</h1>
                         <p class="ml-3">({{ $requestBookCategory }})</p>

@@ -15,6 +15,7 @@ class Books extends Component
     public $book;
     public $showModal = false;
 
+
     public $showBookId;
     public $showBookName;
     public $showBookAuthor;

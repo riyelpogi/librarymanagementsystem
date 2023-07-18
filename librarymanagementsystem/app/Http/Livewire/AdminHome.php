@@ -15,7 +15,8 @@ class AdminHome extends Component
     public $schedules;
     public $borrowedBooks;
 
-    public function mount()
+    protected $listeners = ['refreshCount' => 'refreshThis'];
+    public function refreshThis()
     {
         $this->books = count(Books::get());
         $this->pendingRequest = count(PendingBorrow::get());
@@ -26,6 +27,11 @@ class AdminHome extends Component
 
     public function render()
     {
+        
+        $this->books = count(Books::get());
+        $this->pendingRequest = count(PendingBorrow::get());
+        $this->schedules = count(Schedule::get());
+        $this->borrowedBooks = count(BorrowedBooks::get());
         return view('livewire.admin-home');
     }
 }

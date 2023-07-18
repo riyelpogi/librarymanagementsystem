@@ -1,18 +1,17 @@
-<div class="w-full">
-    <div class="w-full relative flex justify-center items-center flex-col">
+<div class="w-full relative flex justify-center items-center flex-col">
  
          @foreach ($books as $book)
          <div class="w-9/12 m-2 bg-white rounded-lg pointer flex justify-between" >
              
              <div class="relative flex">
-                 <img src="/storage/book.png" alt="" class="w-20 rounded">
-                 <h1 class="p-3 mt-4">{{ $book->book_name }}</h1>
+                 <img src="/storage/book.png" alt="" class="hidden sm:block w-20 rounded">
+                 <h1 class="p-3 mt-4 text-xs sm:text-1xl">{{ $book->book_name }}</h1>
                  
              </div>
             
-             <div class="flex">
-                <x-button class="mt-6 mr-2 h-10 " wire:click="viewBook({{$book->id}})" wire:key="book-{{$book->id}}">View</x-button>
-                <x-button class="mt-6 mr-2 h-10 " wire:click="editQty({{$book->id}})" wire:key="addQty-bookid-{{$book->id}}">Edit Qty</x-button>
+             <div class="flex flex-col sm:flex-row">
+                <x-button class="mt-2 sm:mt-6 mr-2 h-10 " wire:click="viewBook({{$book->id}})" wire:key="book-{{$book->id}}">View</x-button>
+                <x-button class="mt-2 sm:mt-6 mr-2 h-10 " wire:click="editQty({{$book->id}})" wire:key="addQty-bookid-{{$book->id}}">Edit Qty</x-button>
              </div>
          </div>
          @endforeach
@@ -62,6 +61,6 @@
                 </div>
             </div>
          </x-modal>
-    </div>
+  
  </div>
  

@@ -4,7 +4,7 @@
         
         <div class="m-10"> 
             <a href="{{ route('mypendingBooks') }}">
-            <p class="text-center">{{$notification->data['message']}}</p>
+            <p class="text-center text-xs sm:text-lg">{{$notification->data['message']}}</p>
             </a>
         </div>
         <div class=" mr-5">
